@@ -4,7 +4,7 @@ import React from "react";
 const App = () => {
   return (
     <div>
-      <h1>React Parcel 2 Starter</h1>
+      <h1>CV Generator</h1>
     </div>
   );
 };
