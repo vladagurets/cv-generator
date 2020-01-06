@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Moder CV generator",
   "main": "index.js",
+  "homepage": "https://vladagurets.github.io/cv-generator",
   "repository": "https://github.com/vladagurets/cv-generator.git",
   "author": "vladagurets <aguretsvlad@gmail.com>",
   "license": "MIT",
