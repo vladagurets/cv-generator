@@ -1,4 +1,4 @@
-name: MasterDeployCI
+name: Deploy to GH Pages
 on:
   push:
     branches:
@@ -17,7 +17,7 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - name: Install Packages
       run: yarn
-    - name: Deploy to GH Pages
+    - name: Build & Deploy
       run: |
         git config --global user.email "aguretsvlad@gmail.com"
         git config --global user.name "vladagurets"
