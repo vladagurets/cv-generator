@@ -1,6 +1,6 @@
 {
   "name": "cv-generator",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "Moder CV generator",
   "main": "index.js",
   "homepage": "https://vladagurets.github.io/cv-generator",
