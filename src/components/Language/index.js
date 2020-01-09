@@ -1,16 +1,22 @@
 import React from 'react'
-import { Radio } from 'antd'
-import i18n from '../../i18n'
+import classNames from 'classnames'
+import { useTranslation } from 'react-i18next'
+import './index.styl'
 
 const Language = () => {
-  const onChange = ({ target }) => {
-    i18n.changeLanguage(target.value)
+  const { i18n } = useTranslation()
+  const onChange = lang => () => {
+    i18n.changeLanguage(lang)
   }
+  const getClassNames = lang => classNames({
+    'Language-active': i18n.language === lang
+  })
   return (
-    <Radio.Group onChange={onChange}>
-      <Radio value='en'>en</Radio>
-      <Radio value='ru'>ru</Radio>
-    </Radio.Group>
+    <div className='Language'>
+      <span className={getClassNames('en')} onClick={onChange('en')}>en</span>
+      /
+      <span className={getClassNames('ru')} onClick={onChange('ru')}>ru</span>
+    </div>
   )
 }
 

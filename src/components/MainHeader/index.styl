@@ -1,0 +1,32 @@
+.MainHeader
+  position relative
+  background-color var(--main-bg-color)
+  border-bottom 1px solid var(--main-border-color)
+  user-select none
+
+.MainHeader-content
+  margin 0 auto
+  display flex
+  justify-content space-between
+  align-items center
+  width 100%
+  max-width var(--max-app-width)
+
+.MainHeader-logo
+  font-size 30px
+  font-weight bold
+  display inline-flex
+  align-items center
+  & > .MainLogo
+    margin-right 10px
+
+@media (max-width 500px)
+  .MainHeader
+    .Language
+      top -10px
+      right 15px
+      position absolute
+      z-index 1
+  .MainHeader-content
+    display block
+    text-align center

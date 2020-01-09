@@ -1,0 +1,71 @@
+:root {
+  --photo-size: 200px;
+  --avatar-border-pad: 0;
+  --avatar-outline-border-pad: -8px;
+}
+
+.PhotoSection
+  position relative
+  text-align center
+  div.ant-upload
+    position relative
+    z-index 1
+    border 1px solid var(--main-border-color)
+    border-radius 50%
+    background-color var(--controll-bg-volor)
+    margin 0
+    &:hover
+      border-color var(--main-border-color)
+      border-style dashed
+
+.PhotoSection-form-item
+  margin-top 30px
+  position relative
+  display inline-block
+  .ant-upload-picture-card-wrapper
+    width auto
+
+.PhotoSection-preview
+  margin 30px auto
+  width var(--photo-size)
+  height var(--photo-size)
+  border-radius 50%
+  border 1px solid var(--main-border-color)
+  background-repeat no-repeat
+  background-size cover
+  position relative
+  &:before
+    content ''
+    position absolute
+    border 1px dashed var(--main-border-color)
+    border-radius 50%
+    top var(--avatar-outline-border-pad)
+    bottom var(--avatar-outline-border-pad)
+    left var(--avatar-outline-border-pad)
+    right var(--avatar-outline-border-pad)
+    z-index 1
+  &:after
+    content ''
+    position absolute
+    border-radius calc(var(--photo-size) / 2)
+    top var(--avatar-border-pad)
+    bottom var(--avatar-border-pad)
+    left var(--avatar-border-pad)
+    right var(--avatar-border-pad)
+    background-image url('/public/dashed-circle.png')
+    background-size cover
+    animation rotate 100s linear infinite
+    z-index 1
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.PhotoSection-label
+  white-space nowrap
+  position absolute
+  top 50%
+  left 0
+  transform translate(-110%, -75%)

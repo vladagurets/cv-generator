@@ -1,0 +1,47 @@
+:root {
+  --main-bg-color: #f5f5f5;
+  --main-border-color: #2d2d2d;
+  --main-font-color: #2d2d2d;
+  --main-pad: 50px;
+  --max-app-width: 1175px;
+  --controll-bg-volor: #FFFFFF;
+}
+
+*
+  box-sizing border-box
+  color var(--main-font-color)
+  font-family 'Source Code Pro', monospace
+  text-transform lowercase
+
+header, footer
+  position relative
+
+  &:before, &:after
+    content ''
+    position absolute
+    width 1px
+    height 7px
+    background-color var(--main-border-color)
+
+  &:before
+    left calc(var(--main-pad) / 2)
+
+  &:after
+    right calc(var(--main-pad) / 2)
+
+header
+  &:before, &:after
+    bottom -4px
+
+footer
+  &:before, &:after
+    top -4px
+
+#root, & > section
+  height 100%
+  max-height 100%
+
+main
+  overflow auto
+
+@import './styles'

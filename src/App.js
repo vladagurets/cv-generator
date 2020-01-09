@@ -1,52 +1,38 @@
-import React from 'react'
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
+import React, { useEffect } from 'react'
+import { BrowserRouter as Router } from 'react-router-dom'
 import i18n from './i18n'
-import Language from 'components/Language'
-import { I18nextProvider, useTranslation, Trans } from 'react-i18next'
+import { I18nextProvider } from 'react-i18next'
+import { Layout } from 'antd'
 
-const Routes = props => {
-  const { t } = useTranslation()
+import MainHeader from 'components/MainHeader'
+import MainContent from 'components/MainContent'
+import MainFooter from 'components/MainFooter'
+
+import { getCv, createCv } from 'utils/cvHelper'
+
+import './App.styl'
+
+const App = () => {
+  useEffect(() => {
+    !getCv() && createCv()
+  }, [])
   return (
     <Router>
-      <Language />
-      <nav>
-        <ul>
-          <li>
-            <Link to='/'>
-              <Trans>{t('Home')}</Trans>
-            </Link>
-          </li>
-          <li>
-            <Link to='/about'>
-              <Trans>{t('Create CV')}</Trans>
-            </Link>
-          </li>
-          <li>
-            <Link to='/users'>
-              <Trans>{t('Download CV')}</Trans>
-            </Link>
-          </li>
-        </ul>
-      </nav>
-      <Switch>
-        <Route path='/about'>
-          Home
-        </Route>
-        <Route path='/users'>
-          Create CV
-        </Route>
-        <Route path='/'>
-          Download CV
-        </Route>
-      </Switch>
+      <Layout>
+        <Layout>
+          <MainHeader />
+          <MainContent />
+          <MainFooter />
+        </Layout>
+      </Layout>
     </Router>
   )
 }
 
-const App = () => (
+const ie18nWrapper = () => (
   <I18nextProvider i18n={i18n}>
-    <Routes />
+    <App />
   </I18nextProvider>
 )
 
-export default App
+export default ie18nWrapper

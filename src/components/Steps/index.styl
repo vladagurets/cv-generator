@@ -1,0 +1,39 @@
+.Steps
+  display flex
+
+  .ant-steps-item-icon
+    color var(--main-font-color)
+    border-color var(--main-border-color)
+
+  .ant-steps-item-wait .ant-steps-item-icon > .ant-steps-icon
+    color var(--main-font-color)
+
+  .ant-steps-item-process
+    .ant-steps-item-icon
+      background-color var(--main-font-color)
+
+  .ant-steps-item-tail
+    &:after
+      background-color var(--main-font-color) !important
+
+.Steps-header
+  width 300px
+
+.Steps-content
+  flex-grow 1
+
+.Steps-steps
+  position fixed
+
+.Steps-actions
+  position relative
+  text-align center
+  & > button
+    margin 0 10px
+
+  .QuestionIcon
+    position absolute
+    font-size 20px
+    right 0
+    transform translateY(-50%)
+    top 50%
